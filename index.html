@@ -14,22 +14,22 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="scripts/script.js" defer></script>
+	<script src="scripts/modale.js" defer></script>
 </head>
 <body>
-<div id="edition" class="edition">
-	<i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i>
-	<p>Mode édition</p>
-</div>
 <header>
-	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-	<nav>
-		<ul>
-			<li><a href="./index.html">projets</a></li>
-			<li><a href="#">contact</a></li>
-			<li><a href="./login.html" id="login">login</a></li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
-	</nav>
+	<p id="edition" class="edition"><i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i>Mode édition</p>
+	<div class="header">
+		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+		<nav>
+			<ul>
+				<li><a href="./index.html">projets</a></li>
+				<li><a href="#">contact</a></li>
+				<li><a href="./login.html" id="login">login</a></li>
+				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+			</ul>
+		</nav>
+	</div>
 </header>
 <main>
 	<section id="introduction">
@@ -46,10 +46,7 @@
 	<section id="portfolio">
 		<div class="project-title">
 			<h2>Mes Projets</h2>
-			<div class="edition">
-				<i class="fa-regular fa-pen-to-square"></i>
-				<span>modifier</span>
-			</div>
+			<p class="edition" id="myBtn"><i class="fa-regular fa-pen-to-square"></i>modifier</p>
 		</div>
 		<div class="filtres">
 			<!--  -->
@@ -72,7 +69,25 @@
 		</form>
 	</section>
 	<section id="modal">
-		
+		<!-- Trigger/Open The Modal -->
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h3>Galerie photo</h3>
+				<span class="modPhoto">
+					<!-- photos -->
+				</span>
+				<div class="separation-bar">
+					<!-- barre -->
+				</div>
+				<input id="modal-button" type="button" value="Ajouter une photo">
+			</div>
+
+		</div>
 	</section>
 </main>
 

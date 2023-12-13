@@ -53,7 +53,7 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
-header {
+.header {
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0
@@ -155,7 +155,7 @@ margin: auto;
 	flex-direction: column;
 }
 
-#contact input {
+#contact input,#LogIn input, input[type="button"]{
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
@@ -169,7 +169,7 @@ margin: auto;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"]{
+input[type="submit"], input[type="button"]{
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -259,12 +259,6 @@ nav a {
 	flex-direction: column;
 }
 
-#LogIn input {
-	height: 50px;
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-}
 #LogIn label {
 	margin: 2em 0 1em 0;
 }
@@ -283,12 +277,16 @@ nav a {
 	color: #ffffff;
 }
 
+#portfolio .edition {
+	margin-top: 10px;
+}
+
 .edition {
 	display:none;
 	flex-direction: row;
 	gap: 10px;
 	justify-content: center;
-	margin-top: 0.5em;
+	/* margin-top: 0.5em; */
 }
 
 .project-title {
@@ -297,3 +295,100 @@ nav a {
 	justify-content: center;
 	gap: 30px;
 }
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	/*position: fixed; /* Stay in place */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	/* overflow: auto; /* Enable scroll if needed */
+	overflow: visible;
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+	position:relative; /* Stay in place */
+	background-color: #fefefe;
+	/*margin: 15% auto; /* 15% from the top and centered */
+	margin: 55px auto;
+	padding: 60px;
+	/* border: 1px solid #888; */
+	border-radius: 10px;
+	width: 630px;
+	height: 688px;
+  }
+  
+  /* The Close Button */
+  .close {
+	/* color: #aaa; */
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+	/* color: black; */
+	text-decoration: none;
+	cursor: pointer;
+  }
+
+  p#myBtn:hover {
+	cursor: pointer;
+  }
+
+  h3 {
+	/* padding: 30px 0px; */
+	padding-bottom: 50px;
+	font-size: 26px;
+	text-align: center;
+  }
+
+  .modPhoto {
+	width: 75%;
+	margin: 0 auto;
+	display : grid;
+	grid-template-columns: repeat(5 , 5fr);
+	justify-items: center;
+	gap: 30px 10px;
+  }
+
+  .modPhoto img {
+	width: 100%;
+	height: 100%;
+  }
+
+  .separation-bar {
+	width: 75%;
+	border-bottom: solid 1px #B3B3B3;;
+	margin: 0 auto;
+	padding: 25px 0;
+  }
+
+  #modal-button {
+	display:flex;
+	cursor: pointer;
+  } 
+
+  .trash {
+	display:flex;
+	flex-direction: row-reverse;
+	width: fit-content;
+	position: relative;
+	/* z-index: 1; */
+	padding: 5px;
+	top: 30px;
+	left: 55px;
+	background-color: black;
+	border-radius: 5px;
+	cursor: pointer;
+	color: #ffffff;
+  }

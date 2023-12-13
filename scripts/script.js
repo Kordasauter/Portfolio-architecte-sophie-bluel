@@ -3,9 +3,21 @@ let tri = 0;
 let works = 0;
 let filtreActif = new Set();
 
+const image = {
+    name:"",
+    url:"",
+    description:"",
+};
+
+var imageList = new Array();
+
+
+
+
+
 function loadGallery()
 {
-     fetch("http://localhost:5678/api/works").then((response)=>response.json().then((JSON)=>{
+    fetch("http://localhost:5678/api/works").then((response)=>response.json().then((JSON)=>{
         let filtreButton = new Set();
 
         gallery.innerHTML = "";
@@ -13,6 +25,10 @@ function loadGallery()
         
         for(let i = 0 ;i < JSON.length;i++)
         {
+            imageList.push(Object.create(image));
+            imageList[i].name = JSON[i].title;
+            imageList[i].url = JSON[i].imageUrl;
+
             filtreButton.add(JSON[i].category.id);
             filtreButton.add(JSON[i].category.name);
             if(tri == 0)
@@ -138,7 +154,7 @@ function displayEditionMode()
     let login = window.sessionStorage.getItem("userId");
     // let edition = document.getElementById("edition");
     let edition = document.querySelectorAll(".edition");
-    console.log(edition);
+    // console.log(edition);
     if(login == "1")
     {
         edition.forEach(element => {

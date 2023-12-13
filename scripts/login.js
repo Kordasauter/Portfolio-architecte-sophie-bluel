@@ -7,17 +7,17 @@ submit.addEventListener("submit",function(event){
     }
 
     let loginJSON = JSON.stringify(loginparameters);
-    console.log(loginJSON);
+    // console.log(loginJSON);
     fetch("http://localhost:5678/api/users/login", {
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:loginJSON
     }).then((response)=>{
-        console.log(response);
+        // console.log(response);
         if(response.ok)
         {
             response.json().then((respJSON)=>{
-                console.log(respJSON.token);
+                // console.log(respJSON.token);
                 window.sessionStorage.setItem("userId", respJSON.userId);
                 window.sessionStorage.setItem("token", respJSON.token);
             });
