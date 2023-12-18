@@ -13,15 +13,17 @@
 </head>
 <body>
 <header>
-	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-	<nav>
-		<ul>
-			<li><a href="./index.html">projets</a></li>
-			<li><a href="#">contact</a></li>
-			<li><a href="./login.html" class="selectedlink">login</a></li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
-	</nav>
+	<div class="header">
+		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+		<nav>
+			<ul>
+				<li><a href="./index.html">projets</a></li>
+				<li><a href="#">contact</a></li>
+				<li><a href="./login.html" class="selectedlink">login</a></li>
+				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+			</ul>
+		</nav>
+	</div>
 </header>
 <main>
     <section id="LogIn">
@@ -31,8 +33,8 @@
 			<input type="email" name="email" id="email">
 			<label for="password">Mot de passe</label>
 			<input type="password" name="password" id="password">
-			<input type="submit" value="Envoyer">
 			<label class="loginerror">E-mail ou mot de passe incorrect</label>
+			<input type="submit" value="Envoyer" id="logInSubmit">
             <a href="#">Mot de passe oublié</a>
 		</form>
 	</section>

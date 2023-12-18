@@ -25,7 +25,7 @@ submit.addEventListener("submit",function(event){
         } else {
             
             let loginError = event.target.querySelector(".loginerror");
-            loginError.style.cssText = "display:flex;color:red;";
+            loginError.style.cssText = "display:flex;color:red;justify-content: center;";
         }
     });
 });

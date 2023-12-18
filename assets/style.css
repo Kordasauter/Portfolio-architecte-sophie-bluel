@@ -155,7 +155,7 @@ margin: auto;
 	flex-direction: column;
 }
 
-#contact input,#LogIn input, input[type="button"]{
+#contact input, #LogIn input, #editModal input[type="text"], #editModal input[type="submit"], #editModal select, input[type="button"], .add-file{
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
@@ -169,7 +169,7 @@ margin: auto;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"], input[type="button"]{
+#logInSubmit, input[type="button"] {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -178,6 +178,31 @@ input[type="submit"], input[type="button"]{
 	width: 180px;
 	text-align: center;
 	border-radius: 60px ;
+}
+#modal-button-submit{
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #A7A7A7;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
+}
+
+.add-file{
+	color: #306685;
+	text-align: center;
+	font-family: 'Work Sans';
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+
+	background-color: #CBD6DC;
+	border-radius: 50px;
+	padding-left: 30px;
+    padding-right: 30px;
 }
 
 footer nav ul {
@@ -198,7 +223,7 @@ input[type="checkbox"] {
 	display : none;
 }
 
-div label {
+.filtres label {
 	display: flex;
 	height: 37px;
 	min-width: 80px;
@@ -252,7 +277,7 @@ nav a {
 #LogIn h2{
 	margin-bottom: 20px;
 }
-#LogIn form {
+#LogIn form, #editModal form{
 	text-align: left;
 	margin-top:30px;
 	display: flex;
@@ -347,7 +372,7 @@ nav a {
 
   h3 {
 	/* padding: 30px 0px; */
-	padding-bottom: 50px;
+	/* padding-bottom: 50px; */
 	font-size: 26px;
 	text-align: center;
   }
@@ -373,9 +398,15 @@ nav a {
 	padding: 25px 0;
   }
 
-  #modal-button {
+  form .separation-bar {
+	width: 100%;
+  }
+
+  #modal-button, .add-file {
 	display:flex;
 	cursor: pointer;
+	justify-content: center;
+	align-items: center;
   } 
 
   .trash {
@@ -392,3 +423,80 @@ nav a {
 	cursor: pointer;
 	color: #ffffff;
   }
+
+  .addPhoto {
+	width: 75%;
+	margin: 0 auto;
+	display : grid;
+	/* grid-template-columns: repeat(5 , 5fr); */
+	justify-items: center;
+	gap: 30px 10px;
+  }
+
+  .addPhoto form{
+	width: 100%;
+  }
+
+  .addPhoto input[type="file"] {
+	display:none;
+  }
+  .image-background {
+	height: 170px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 3px;
+	background: #E8F1F6;
+	gap: 5px;
+  }
+
+  .add-file .image-background{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  label.add-file {
+	margin: 0;
+  }
+
+  .fa-image {
+	margin-top: 13px;
+	width: 76px;
+	height: 76px;
+	color: #CBD6DC;
+  }
+
+  .file-restriction {
+	margin: 5px;
+  }
+
+  .lab-title, .lab-category {
+	color: #3D3D3D;
+	font-family: Work Sans;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	padding-top: 20px;
+	padding-bottom: 10px;
+  }
+
+  .new-pic {
+	height: 170px;
+  }
+
+    /* The previous Button */
+	.previous {
+		/* color: #aaa; */
+		float: left;
+		font-size: 28px;
+		font-weight: bold;
+	}
+	
+	.previous:hover,
+	.previous:focus {
+	/* color: black; */
+	text-decoration: none;
+	cursor: pointer;
+	}

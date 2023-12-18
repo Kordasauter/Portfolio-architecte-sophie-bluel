@@ -11,15 +11,12 @@ const image = {
 
 var imageList = new Array();
 
-
-
-
-
 function loadGallery()
 {
     fetch("http://localhost:5678/api/works").then((response)=>response.json().then((JSON)=>{
         let filtreButton = new Set();
 
+        imageList = new Array();
         gallery.innerHTML = "";
         works = JSON;
         
@@ -28,6 +25,7 @@ function loadGallery()
             imageList.push(Object.create(image));
             imageList[i].name = JSON[i].title;
             imageList[i].url = JSON[i].imageUrl;
+            imageList[i].id = JSON[i].id;
 
             filtreButton.add(JSON[i].category.id);
             filtreButton.add(JSON[i].category.name);
@@ -39,7 +37,7 @@ function loadGallery()
                 createFigure(JSON[i].imageUrl,JSON[i].title)
             }
         }
-        createfilter(Array.from(filtreButton))
+        createFilter(Array.from(filtreButton))
     }));
 }
 
@@ -55,7 +53,7 @@ function refreshGallery()
     }
 }
 
-function createfilter(filtres)
+function createFilter(filtres)
 {
     let divFiltre = document.querySelector(".filtres");
     divFiltre.innerHTML = "";
@@ -182,5 +180,6 @@ function isLoged()
         displayEditionMode();
     }
 }
+
 isLoged();
 loadGallery();
