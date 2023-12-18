@@ -169,7 +169,7 @@ margin: auto;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-#logInSubmit, input[type="button"] {
+input[type="button"], input[type="submit"]  {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -311,7 +311,6 @@ nav a {
 	flex-direction: row;
 	gap: 10px;
 	justify-content: center;
-	/* margin-top: 0.5em; */
 }
 
 .project-title {
@@ -324,97 +323,86 @@ nav a {
 /* The Modal (background) */
 .modal {
 	display: none; /* Hidden by default */
-	/*position: fixed; /* Stay in place */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
 	left: 0;
 	top: 0;
 	width: 100%; /* Full width */
 	height: 100%; /* Full height */
-	/* overflow: auto; /* Enable scroll if needed */
 	overflow: visible;
 	background-color: rgb(0,0,0); /* Fallback color */
 	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 	
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-	position:relative; /* Stay in place */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	position:relative;
 	background-color: #fefefe;
-	/*margin: 15% auto; /* 15% from the top and centered */
 	margin: 55px auto;
 	padding: 60px;
-	/* border: 1px solid #888; */
 	border-radius: 10px;
 	width: 630px;
 	height: 688px;
-  }
-  
-  /* The Close Button */
-  .close {
-	/* color: #aaa; */
+}
+
+.close {
 	float: right;
 	font-size: 28px;
 	font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-	/* color: black; */
+}
+
+.close:hover,
+.close:focus,
+.previous:hover,
+.previous:focus,
+p#editButton:hover {
 	text-decoration: none;
 	cursor: pointer;
-  }
+}
 
-  p#myBtn:hover {
-	cursor: pointer;
-  }
-
-  h3 {
-	/* padding: 30px 0px; */
-	/* padding-bottom: 50px; */
+h3 {
 	font-size: 26px;
 	text-align: center;
-  }
+}
 
-  .modPhoto {
+.modPhoto {
 	width: 75%;
 	margin: 0 auto;
 	display : grid;
 	grid-template-columns: repeat(5 , 5fr);
 	justify-items: center;
 	gap: 30px 10px;
-  }
+}
 
-  .modPhoto img {
+.modPhoto img {
 	width: 100%;
 	height: 100%;
-  }
+}
 
-  .separation-bar {
+.separation-bar {
 	width: 75%;
 	border-bottom: solid 1px #B3B3B3;;
 	margin: 0 auto;
 	padding: 25px 0;
-  }
+}
 
-  form .separation-bar {
+form .separation-bar {
 	width: 100%;
-  }
+}
 
-  #modal-button, .add-file {
+#modal-button, .add-file {
 	display:flex;
 	cursor: pointer;
 	justify-content: center;
 	align-items: center;
-  } 
+} 
 
-  .trash {
+.trash {
 	display:flex;
 	flex-direction: row-reverse;
 	width: fit-content;
 	position: relative;
-	/* z-index: 1; */
 	padding: 5px;
 	top: 30px;
 	left: 55px;
@@ -422,25 +410,25 @@ nav a {
 	border-radius: 5px;
 	cursor: pointer;
 	color: #ffffff;
-  }
+}
 
-  .addPhoto {
+.addPhoto {
 	width: 75%;
 	margin: 0 auto;
 	display : grid;
-	/* grid-template-columns: repeat(5 , 5fr); */
 	justify-items: center;
 	gap: 30px 10px;
-  }
+}
 
-  .addPhoto form{
+.addPhoto form{
 	width: 100%;
-  }
+}
 
-  .addPhoto input[type="file"] {
+.addPhoto input[type="file"] {
 	display:none;
-  }
-  .image-background {
+}
+
+.image-background {
 	height: 170px;
 	display: flex;
 	flex-direction: column;
@@ -448,55 +436,47 @@ nav a {
 	border-radius: 3px;
 	background: #E8F1F6;
 	gap: 5px;
-  }
+}
 
-  .add-file .image-background{
+.add-file .image-background{
 	display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+	justify-content: center;
+	align-items: center;
+}
 
-  label.add-file {
+label.add-file {
 	margin: 0;
-  }
+}
 
-  .fa-image {
+.fa-image {
 	margin-top: 13px;
 	width: 76px;
 	height: 76px;
 	color: #CBD6DC;
-  }
+}
 
-  .file-restriction {
+.file-restriction {
 	margin: 5px;
-  }
+}
 
-  .lab-title, .lab-category {
+.lab-title, .lab-category {
 	color: #3D3D3D;
-	font-family: Work Sans;
+	font-family: "Work Sans";
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 500;
 	line-height: normal;
 	padding-top: 20px;
 	padding-bottom: 10px;
-  }
+}
 
-  .new-pic {
+.new-pic {
 	height: 170px;
-  }
+}
 
-    /* The previous Button */
-	.previous {
-		/* color: #aaa; */
-		float: left;
-		font-size: 28px;
-		font-weight: bold;
-	}
-	
-	.previous:hover,
-	.previous:focus {
-	/* color: black; */
-	text-decoration: none;
-	cursor: pointer;
-	}
+/* The previous Button */
+.previous {
+	float: left;
+	font-size: 28px;
+	font-weight: bold;
+}
