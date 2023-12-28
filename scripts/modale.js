@@ -101,6 +101,12 @@ function inputImage()
 				classList: "new-pic"
 			}));
 		}
+		else
+		{ 
+			//si l'image fais plus de 4Mo on reset le input file
+			event.target.value = '';
+			div.querySelector(".file-restriction").style = "color : red;";
+		}
 	});
 
 	return div;
