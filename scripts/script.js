@@ -8,35 +8,27 @@ const image = {
 	description:"",
 };
 
-var imageList = new Array();
-
 async function loadGallery()
 {
 	await fetch("http://localhost:5678/api/works").then((response)=>response.json().then((JSON)=>{
-		imageList = new Array();
 		gallery.innerHTML = "";
 		works = JSON;
 		
 		for(let i = 0 ;i < JSON.length;i++)
-		{
-			imageList.push(Object.assign(Object.create(image), { 
-				name: JSON[i].title, 
-				url: JSON[i].imageUrl, 
-				id: JSON[i].id
-			}));
-
 			createFigure(JSON[i].imageUrl,JSON[i].title)
-		}
-		createFilter();
+		
 	}));
 }
 
 function refreshGallery()
 {
 	gallery.innerHTML = "";
+	
 	for(let i = 0 ;i < works.length;i++)
 	{
-		if(filtreActif.has('0'))
+		//filtreActif.has('0') = cas ou "tout" est coché
+		//(filtreActif.size == 0) = cas où aucun des filtres n'est actif (en mode edition par exemple)
+		if(filtreActif.has('0') || (filtreActif.size == 0))
 			createFigure(works[i].imageUrl,works[i].title)
 		else if(filtreActif.has(works[i].categoryId.toString()))
 			createFigure(works[i].imageUrl,works[i].title)
@@ -171,4 +163,5 @@ function isLoged()
 }
 
 isLoged();
+createFilter();
 loadGallery();

@@ -27,8 +27,8 @@ function modalGallery()
 	});
 	
 	//crée et ajoute les vignettes à la galerie de la modale
-	imageList.forEach(element => {
-		editGallery.appendChild(createVignette(element.name,element.url,element.id));
+	works.forEach(element => {
+		editGallery.appendChild(createVignette(element.title,element.imageUrl,element.id));
 	});
 
 	//ajoute la galerie à la modale
@@ -266,18 +266,22 @@ function createVignette(name,imgUrl,id)
 		 fetch("http://localhost:5678/api/works/"+id, {
 			method:"DELETE",
 			headers:{Authorization: "Bearer " + window.sessionStorage.getItem("token")},
-		}).then(async (response)=>{
+		}).then((response)=>{
 			if(response.ok)
 			{
-				//await necessaire car la galerie de photo est mise en mémoire dans la fonction loadGallery() avec imageList[]
-				await loadGallery();
+				works.splice( works.findIndex(object => {
+					return object.id === id;
+				}),1);
+
+				refreshGallery();
 
 				//reset de la galerie photo de la modale
 				document.querySelector(".modPhoto").innerHTML = "";
 
-				//pour chaque image dans imageList on crée une vignette
-				imageList.forEach(element => {
-						document.querySelector(".modPhoto").appendChild(createVignette(element.name,element.url,element.id));
+				//pour chaque projet dans works on crée une vignette
+					works.forEach(element => {
+						// document.querySelector(".modPhoto").appendChild(createVignette(element.name,element.url,element.id));
+						document.querySelector(".modPhoto").appendChild(createVignette(element.title,element.imageUrl,element.id));
 				});
 			}
 		});
