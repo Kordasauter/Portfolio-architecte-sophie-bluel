@@ -8,7 +8,7 @@ submit.addEventListener("submit",function(event){
 
 	let loginJSON = JSON.stringify(loginparameters);
 	// document.location.href = "index.html"; 
-	fetch("http://localhost:5678/api/users/login", {
+	fetch("https://sophiebluelbackend.azurewebsites.net/api/users/login", {
 		method:"POST",
 		headers:{"Content-Type":"application/json"},
 		body:loginJSON

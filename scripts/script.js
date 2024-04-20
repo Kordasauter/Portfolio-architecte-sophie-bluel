@@ -10,7 +10,7 @@ const image = {
 
 async function loadGallery()
 {
-	await fetch("http://localhost:5678/api/works").then((response)=>response.json().then((JSON)=>{
+	await fetch("https://sophiebluelbackend.azurewebsites.net/api/works").then((response)=>response.json().then((JSON)=>{
 		gallery.innerHTML = "";
 		works = JSON;
 		
@@ -44,7 +44,7 @@ async function createFilter()
 	divFiltre.appendChild(createFilterButton(0,"Tous"));
 	document.querySelector("#Tous").checked = true;
 
-	await fetch("http://localhost:5678/api/categories").then((response)=>response.json().then((JSON)=>{
+	await fetch("https://sophiebluelbackend.azurewebsites.net/api/categories").then((response)=>response.json().then((JSON)=>{
 		for(let i = 0;i < Object.keys(JSON).length;i++)
 		divFiltre.appendChild(createFilterButton(JSON[i].id,JSON[i].name));
 	}));
