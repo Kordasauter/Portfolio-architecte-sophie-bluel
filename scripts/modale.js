@@ -126,7 +126,7 @@ function addPhotoForm()
 	selectCategory.options[0].disabled = true;
 
 	//récupération de la liste des catégories et crée une option par catégorie
-	fetch("https://sophiebluelbackend.azurewebsites.net/api/categories").then((response)=>response.json().then((JSON)=>{
+	fetch("http://localhost:5678/api/categories").then((response)=>response.json().then((JSON)=>{
 		for(let i = 0;i < Object.keys(JSON).length;i++)
 			selectCategory.options[selectCategory.options.length] = new Option(JSON[i].name,JSON[i].id);
 	}));
@@ -192,7 +192,7 @@ function uploadPhoto(newImage,newTitle,newCategory)
 	formData.append("image",newImage);
 	formData.append("category",parseInt(newCategory));
 
-	fetch("https://sophiebluelbackend.azurewebsites.net/api/works", {
+	fetch("http://localhost:5678/api/works", {
 		method:"POST",
 		headers:{Authorization: "Bearer " + window.sessionStorage.getItem("token")},
 		body:formData
@@ -263,7 +263,7 @@ function createVignette(name,imgUrl,id)
 
 	//event listener en cas de click sur la corbeille
 	figure.querySelector(".trash").addEventListener("click", function(){
-		 fetch("https://sophiebluelbackend.azurewebsites.net/api/works/"+id, {
+		 fetch("http://localhost:5678/api/works/"+id, {
 			method:"DELETE",
 			headers:{Authorization: "Bearer " + window.sessionStorage.getItem("token")},
 		}).then((response)=>{
